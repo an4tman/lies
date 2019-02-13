@@ -13,7 +13,7 @@ def is_english_word(word):
     rtype: bool
     """
     dictionary = set(nltk_words.words())
-    if word in dictionary == True:
+    if word in dictionary:
         return True
     else:
         return False
