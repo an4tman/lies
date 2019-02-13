@@ -13,3 +13,4 @@ pyflakes==2.1.0
 pytest==4.2.0
 pytest-cov==2.6.1
 six==1.12.0
+pyenchant==2.0.0
