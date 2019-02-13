@@ -16,6 +16,7 @@ def is_english_word(word):
     if word in dictionary:
         return True
     else:
+        print(word + " is not a legal english word")
         return False
 
 
@@ -29,6 +30,7 @@ def is_statement_english(statement):
     words_in_statement = re.split(r'[;,\.\s]\s*', statement) #deliminates on commas, semicolon, period and any amounnt of white spaces
     for word in words_in_statement:
         if is_english_word(word) == False:
+            print("This sentence contains illegal words")
             return False
     return True
 
@@ -39,7 +41,11 @@ def validate_length(us):
     param us: a user-input string
     rtype: bool
     """
-    return len(us) <= 140
+    if len(us) <= 140:
+        return True
+    else:
+        print("This sentence is more than 140 characters.")
+        return False
 
 
 def validate_sentence(us):
@@ -49,7 +55,11 @@ def validate_sentence(us):
     param us: a user-input string
     rtype: bool
     """
-    return us[-1] == '.'
+    if us[-1] == '.':
+        return True
+    else:
+        print("This sentence does not end in a period")
+        return False
 
 def input_val(s):
     """
