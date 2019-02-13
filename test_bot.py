@@ -16,4 +16,3 @@ import bot
 def test_strat(strategy, l, expected):
     """Test that the bot selects the shortest input string."""
     assert strategy(*l) == expected
-
