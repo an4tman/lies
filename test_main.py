@@ -25,21 +25,3 @@ evil_input = [i.strip() for i in evil_input]
 
 # print(true_input)
 # print(false_input)
-
-@pytest.mark.parametrize("us, expected", [
-    ("What is my name?", False),
-    ("Foo is my name.", True),
-])
-def test_val_sentence(us, expected):
-    """Test sentence validation."""
-    assert bot.validate_sentence(us) == expected
-
-
-@pytest.mark.parametrize("us, expected", [
-    ("A" * 141, False),
-    ("A" * 140, True),
-    ("A" * 139, True),
-])
-def test_val_length(us, expected):
-    """Test length validation."""
-    assert bot.validate_length(us) == expected
