@@ -28,7 +28,7 @@ def is_statement_english(statement):
     rtype: bool
     """
     words_in_statement = re.split(r'[;,\.\s]\s*', statement) #deliminates on commas, semicolon, period and any amounnt of white spaces
-    for word in words_in_statement:
+    for word in words_in_statement[:-1]:
         if is_english_word(word) == False:
             print("This sentence contains illegal words")
             return False
