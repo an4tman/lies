@@ -23,6 +23,6 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest -v --cov 
+            pytest -v
             set +e
             flake8 --exclude=venv* --statistics
