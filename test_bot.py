@@ -1,13 +1,19 @@
+#!/usr/bin/python3
+
 """
 unit tests for the bot library
 """
 
+import pytest
+
 import bot
 
-class TestBot:
 
-    def test_longest(self):
-        assert "four score and seven years ago" == bot.longest("something", "something else", "four score and seven years ago")
+@pytest.mark.parametrize("strategy, l, expected", [
+    (bot.longest, ["something", "something else", "four score and seven years ago"], "four score and seven years ago"),
+    (bot.shortest, ["something", "something else", "four score and seven years ago"], "something"),
+])
+def test_strat(strategy, l, expected):
+    """Test that the bot selects the shortest input string."""
+    assert strategy(*l) == expected
 
-    def test_shortest(self):
-        assert "something" == bot.shortest("something", "something else", "four score and seven years ago")
