@@ -36,13 +36,10 @@ def test_val_sentence(us, expected):
 
 
 @pytest.mark.parametrize("us, expected", [
-    ("A"*141, False),
-    ("A"*140, True),
-    ("A"*139, True),
+    ("A" * 141, False),
+    ("A" * 140, True),
+    ("A" * 139, True),
 ])
 def test_val_length(us, expected):
     """Test length validation."""
     assert bot.validate_length(us) == expected
-
-
-    
