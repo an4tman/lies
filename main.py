@@ -1,32 +1,11 @@
-import sys
-import random 
-import nltk
-from nltk.corpus  import words as nltk_words
-import re
+#!/usr/bin/python3
 
-
-def is_english_word(word):   
-    dictionary = set(nltk_words.words())
-    if word in dictionary == True:
-        return True
-    else:
-        return False
-
-
-def is_statement_english(statement):
-    words_in_statement = re.split(r'[;,\.\s]\s*', statement) #deliminates on commas, semicolon, period and any amounnt of white spaces
-    print(words_in_statement)
-    for word in words_in_statement:
-        if is_english_word(word) == False:
-#            print(word+" is not a word")
-            return False
-    return True
-
+import bot, val
 
 print("Hi There! Let's play 2 truths and a lie!")
 print("Please enter 3 statements, 2 true and 1 false.")
 s1=input("Please enter your first statment:")
-assert is_statement_english(s1) == True
+assert val.input_val == True
 
 s2=input("Please enter your second statment:")
 s3=input("Please enter your third statement:")
